@@ -29,7 +29,7 @@ module.exports = {
         }],
         "no-unused-vars": "warn",
         "no-useless-catch": 'warn',
-        "react/no-unknown-property": "warn",
+        "react/no-unknown-property": "off",
     },
     settings: {
         react: {version: "detect"}
