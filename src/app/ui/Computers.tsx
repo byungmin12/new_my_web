@@ -1,19 +1,12 @@
 import React from 'react';
 import { Image } from '@react-three/drei';
-import { useFrame } from '@react-three/fiber';
-import { easing } from 'maath';
 import useComputers from '@/app/lib/hooks/useComputers';
 import Monitor from '@/app/ui/Monitor';
 import MonitorMesh from '@/app/ui/MonitorMesh';
-import RouterScreen from '@/app/ui/RouterScreen';
+import RouterScreen from '@/app/ui/RouterScreen/RouterScreen';
 
 function Computers() {
   const { nodes, materials } = useComputers();
-
-  useFrame((state, delta) => {
-    easing.damp3(state.camera.position, [-1 + (state.pointer.x * state.viewport.width) / 3, (1 + state.pointer.y) / 2, 5.5], 0.5, delta);
-    state.camera.lookAt(0, 0, 0);
-  });
 
   return (
     <group dispose={null} scale={0.5}>
@@ -418,7 +411,7 @@ function Computers() {
         rotation={[-Math.PI, 0.563, 0]}
         scale={-1}
       />
-      <RouterScreen frameId='Object_206' panelId='Object_207' position={[0.27, 1.53, -2.61]}>
+      <RouterScreen frameId='Object_206' panelId='Object_207' position={[0.27, 1.53, -2.61]} annotation={<div>test</div>}>
         <Image url='/ic_id_card.png' position={[-3.15, 0.75, 0]} transparent={true} scale={1.5} />
       </RouterScreen>
     </group>

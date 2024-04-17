@@ -50,22 +50,8 @@ canvas {
     animation: fade-in 5s ease 1s forwards;
 }
 
-input {
-    width: 100px;
-    border: none;
-    background-image: none;
-    background-color: transparent;
-    color: transparent;
-    caret-color: #555;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-    font-weight: 400;
-}
-
-input:focus {
-    outline: none;
-    box-shadow: none !important;
+.app {
+    @apply relative w-full h-screen overflow-hidden;
 }
 
 
