@@ -14,7 +14,7 @@ function Computers() {
       <Monitor frameId='Object_209' panelId='Object_210' position={[-1.43, 2.496, -1.8]} rotation={[0, 1.002, 0]} />
       <Monitor frameId='Object_221' panelId='Object_222' position={[-3.417, 3.056, 1.303]} rotation={[0, 1.222, 0]} scale={0.9} />
 
-      <Monitor frameId='Object_206' panelId='Object_207' position={[0.27, 1.529, -2.613]} />
+      {/*<Monitor frameId='Object_206' panelId='Object_207' position={[0.27, 1.529, -2.613]} />*/}
       <Monitor frameId='Object_218' panelId='Object_219' position={[3.11, 2.145, -0.18]} rotation={[0, -0.793, 0]} scale={0.81} />
       <Monitor frameId='Object_215' panelId='Object_216' position={[1.845, 0.377, -1.771]} rotation={[0, -Math.PI / 9, 0]} />
       <Monitor frameId='Object_224' panelId='Object_225' position={[-3.899, 4.287, -2.642]} rotation={[0, 0.539, 0]} />
@@ -22,6 +22,14 @@ function Computers() {
       <Monitor frameId='Object_227' panelId='Object_228' position={[0.955, 4.282, -4.203]} rotation={[0.003, -0.647, 0.003]} />
 
       <Monitor frameId='Object_230' panelId='Object_231' position={[4.683, 4.29, -1.558]} rotation={[0, -Math.PI / 3, 0]} />
+
+      <RouterScreen frameId='Object_206' panelId='Object_207' position={[0.27, 1.529, -2.613]} annotation={<div>test</div>}>
+        <Image url='/ic_id_card.png' position={[-3.15, 0.75, 0]} transparent={true} scale={1.5} />
+      </RouterScreen>
+
+      <RouterScreen frameId='Object_230' panelId='Object_231' position={[4.683, 4.29, -1.558]} rotation={[0, -Math.PI / 3, 0]} annotation={<div>test</div>}>
+        <Image url='/ic_id_card.png' position={[-3.15, 0.75, 0]} transparent={true} scale={1.5} />
+      </RouterScreen>
 
       <MonitorMesh
         geometry={nodes.Object_4.geometry}
@@ -411,9 +419,6 @@ function Computers() {
         rotation={[-Math.PI, 0.563, 0]}
         scale={-1}
       />
-      <RouterScreen frameId='Object_206' panelId='Object_207' position={[0.27, 1.53, -2.61]} annotation={<div>test</div>}>
-        <Image url='/ic_id_card.png' position={[-3.15, 0.75, 0]} transparent={true} scale={1.5} />
-      </RouterScreen>
     </group>
   );
 }

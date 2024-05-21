@@ -9,6 +9,7 @@ function useHook() {
   const { addHoverScreen, removeHoverScreen } = useHoverScreenStore();
 
   const onPointerOver = (mesh: Group) => {
+    console.log(mesh);
     setTrue();
     addHoverScreen(mesh);
   };

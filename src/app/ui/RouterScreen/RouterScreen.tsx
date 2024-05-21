@@ -1,7 +1,6 @@
 import React from 'react';
 import Screen, { IScreen } from '@/app/ui/Screen';
 import { PerspectiveCamera } from '@react-three/drei';
-import Tooltip from '@/app/ui/Tooltip';
 import useHook from '@/app/ui/RouterScreen/useHook';
 
 interface IRouterScreen extends IScreen {
@@ -22,10 +21,9 @@ function RouterScreen({ children, annotation, color = 'orange', annotationPositi
       <pointLight decay={0} position={[10, 10, 10]} intensity={Math.PI} />
       <pointLight decay={0} position={[-10, -10, -10]} />
       {children}
-      {/*distanceFactor={30} position={position ?? [0.3, 0.5, -3]}*/}
-      <Tooltip isHover={isHover} distanceFactor={annotationFactor ?? 20} position={annotationPosition ?? [0.3, 0.5, -3]}>
-        {annotation}
-      </Tooltip>
+      {/*<Tooltip isHover={isHover} distanceFactor={annotationFactor ?? 20} position={annotationPosition ?? [1.8, 3, -3]}>*/}
+      {/*  {annotation}*/}
+      {/*</Tooltip>*/}
     </Screen>
   );
 }

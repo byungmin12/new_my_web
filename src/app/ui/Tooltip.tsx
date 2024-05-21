@@ -14,8 +14,8 @@ function Tooltip({ children, isHover = true, ...props }: ITooltip) {
       <style jsx>{`
         .annotation {
           transition:
-            opacity 0.5s ease,
-            transform 0.5s ease;
+            opacity 0.5s ease 0.5s,
+            transform 0.5s ease 0.5s;
           opacity: 0;
           pointer-events: none;
         }

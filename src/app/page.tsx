@@ -9,7 +9,6 @@ import useHoverScreenStore from '@/app/lib/states/hoverScreen';
 
 export default function Home() {
   const { hoveredScreen } = useHoverScreenStore();
-  console.log(hoveredScreen?.position);
   return (
     <main className='app transition-all ease-in'>
       <Canvas shadows dpr={[1, 1.5]} camera={{ position: [-1.5, 1, 5.5], fov: 45, near: 1, far: 20 }}>
