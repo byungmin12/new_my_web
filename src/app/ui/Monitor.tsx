@@ -1,15 +1,14 @@
 import React from 'react';
-import useComputers from '@/app/lib/hooks/useComputers';
 import MonitorMesh from '@/app/ui/MonitorMesh';
+import { TMesh, TMeterial } from '@/app/lib/types/type';
 
-interface IMonitor
-  extends React.PropsWithChildren<React.JSX.IntrinsicElements['group']> {
-  frameId: string;
-  panelId: string;
+export interface IMonitor extends React.PropsWithChildren<React.JSX.IntrinsicElements['group']> {
+  frame: TMesh;
+  panel: TMesh;
+  materials: TMeterial;
 }
 
-function Monitor({ frameId, panelId, ...props }: IMonitor) {
-  const { frame, panel, materials } = useComputers(frameId, panelId);
+function Monitor({ frame, panel, materials, ...props }: IMonitor) {
   return (
     <group {...props}>
       <MonitorMesh geometry={frame?.geometry} material={materials.Texture} />

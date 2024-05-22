@@ -33,5 +33,8 @@ module.exports = {
     },
     settings: {
         react: {version: "detect"}
+    },
+    globals: {
+        NodeJS: true
     }
 };

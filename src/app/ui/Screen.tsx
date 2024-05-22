@@ -1,21 +1,13 @@
-import React, { useRef } from 'react';
-import useComputers from '@/app/lib/hooks/useComputers';
+import React from 'react';
 import { RenderTexture } from '@react-three/drei';
 import MonitorMesh from '@/app/ui/MonitorMesh';
-import { Group } from 'three';
+import { IMonitor } from '@/app/ui/Monitor';
 
-export interface IScreen extends React.PropsWithChildren<React.JSX.IntrinsicElements['group']> {
-  frameId: string;
-  panelId: string;
-  onHoverScreen: (screen: Group) => void;
-}
+export interface IScreen extends IMonitor {}
 
-function Screen({ frameId, panelId, children, onHoverScreen, ...props }: IScreen) {
-  const groupRef = useRef<Group>(null);
-  const { frame, panel, materials } = useComputers(frameId, panelId);
-
+function Screen({ frame, panel, children, materials, ...props }: IScreen) {
   return (
-    <group {...props} ref={groupRef} onPointerOver={() => onHoverScreen(groupRef.current!)}>
+    <group {...props}>
       <MonitorMesh geometry={frame?.geometry} material={materials.Texture} />
       <mesh geometry={panel?.geometry}>
         <meshBasicMaterial toneMapped={false}>

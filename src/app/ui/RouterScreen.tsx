@@ -1,7 +1,7 @@
 import React from 'react';
 import Screen, { IScreen } from '@/app/ui/Screen';
 import { PerspectiveCamera } from '@react-three/drei';
-import useHook from '@/app/ui/RouterScreen/useHook';
+import { hoverRouterScreenName } from '@/app/lib/config/const';
 
 interface IRouterScreen extends IScreen {
   children: React.ReactNode;
@@ -12,9 +12,8 @@ interface IRouterScreen extends IScreen {
 }
 
 function RouterScreen({ children, annotation, color = 'orange', annotationPosition, annotationFactor, ...props }: IRouterScreen) {
-  const { isHover, onPointerOver, onPointerOut } = useHook();
   return (
-    <Screen {...props} onHoverScreen={onPointerOver} onPointerOut={onPointerOut}>
+    <Screen {...props} name={hoverRouterScreenName} onPointerOver={() => {}}>
       <PerspectiveCamera makeDefault manual aspect={1} position={[0, 0, 10]} />
       <color attach='background' args={['orange']} />
       <ambientLight intensity={Math.PI / 2} />

@@ -3,7 +3,7 @@
 import { Canvas } from '@react-three/fiber';
 import { BakeShadows, MeshReflectorMaterial } from '@react-three/drei';
 import { Bloom, DepthOfField, EffectComposer } from '@react-three/postprocessing';
-import Computers from '@/app/ui/Computers';
+import Computers from '@/app/ui/Computers/Computers';
 import MovingCamera from '@/app/ui/MovingCamera';
 import useHoverScreenStore from '@/app/lib/states/hoverScreen';
 

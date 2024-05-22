@@ -1,6 +1,7 @@
 import React from 'react';
 import { Html } from '@react-three/drei';
 import { HtmlProps } from '@react-three/drei/web/Html';
+import { hoverAnimationTime } from '@/app/lib/config/const';
 
 interface ITooltip extends HtmlProps {
   children: React.ReactNode;
@@ -14,8 +15,8 @@ function Tooltip({ children, isHover = true, ...props }: ITooltip) {
       <style jsx>{`
         .annotation {
           transition:
-            opacity 0.5s ease 0.5s,
-            transform 0.5s ease 0.5s;
+            opacity ${hoverAnimationTime / 1000}s ease ${hoverAnimationTime / 1000}s,
+            transform ${hoverAnimationTime / 1000}s ease ${hoverAnimationTime / 1000}s;
           opacity: 0;
           pointer-events: none;
         }
